@@ -19,18 +19,26 @@ public class Controller {
     }
     @GetMapping("/plus")
     public String showResultOfPlus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.showResultOfPlus(num1, num2);
+        int result = calculatorService.showResultOfPlus(num1, num2);
+        return num1 + " + " + num2 + " = " + result;
     }
     @GetMapping("/minus")
     public String showResultOfMinus(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.showResultOfMinus(num1, num2);
+        int result = calculatorService.showResultOfMinus(num1, num2);
+        return num1 + " - " + num2 + " = " + result;
     }
     @GetMapping("/multiply")
     public String showResultOfMultiply(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.showResultOfMultiply(num1, num2);
+        int result = calculatorService.showResultOfMultiply(num1, num2);
+        return num1 + " * " + num2 + " = " + result;
     }
     @GetMapping("/divide")
     public String showResultOfDivide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        return calculatorService.showResultOfDivide(num1, num2);
+        if (num2 == 0) {
+            return "На ноль делить нельзя.";
+        } else {
+            float result = calculatorService.showResultOfDivide(num1, num2);
+            return num1 + " / " + num2 + " = " + result;
+        }
     }
 }

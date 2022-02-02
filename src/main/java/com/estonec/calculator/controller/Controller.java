@@ -34,11 +34,7 @@ public class Controller {
     }
     @GetMapping("/divide")
     public String showResultOfDivide(@RequestParam("num1") int num1, @RequestParam("num2") int num2) {
-        if (num2 == 0) {
-            return "На ноль делить нельзя.";
-        } else {
             float result = calculatorService.showResultOfDivide(num1, num2);
             return num1 + " / " + num2 + " = " + result;
-        }
     }
 }

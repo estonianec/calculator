@@ -25,6 +25,9 @@ public class CalculatorServiceImpl implements CalculatorService {
     }
 
     public float showResultOfDivide(int num1, int num2) {
-            return (float) num1 / (float) num2;
+            if (num2 == 0) {
+                throw new IllegalArgumentException();
+            }
+        return (float) num1 / (float) num2;
     }
 }

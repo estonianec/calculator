@@ -12,27 +12,19 @@ public class CalculatorServiceImpl implements CalculatorService {
                 "<BR>Задача №5 по <a href=\"/calculator/divide?num1=5&num2=5\">ссылке</a>";
     }
 
-    public String showResultOfPlus(int num1, int num2) {
-        int result = num1 + num2;
-        return num1 + " + " + num2 + " = " + result;
+    public int showResultOfPlus(int num1, int num2) {
+        return num1 + num2;
     }
 
-    public String showResultOfMinus(int num1, int num2) {
-        int result = num1 - num2;
-        return num1 + " - " + num2 + " = " + result;
+    public int showResultOfMinus(int num1, int num2) {
+        return num1 - num2;
     }
 
-    public String showResultOfMultiply(int num1, int num2) {
-        int result = num1 * num2;
-        return num1 + " * " + num2 + " = " + result;
+    public int showResultOfMultiply(int num1, int num2) {
+        return num1 * num2;
     }
 
-    public String showResultOfDivide(int num1, int num2) {
-        if (num2 == 0) {
-            return "На ноль делить нельзя.";
-        } else {
-            float result = (float) num1 / (float) num2;
-            return num1 + " / " + num2 + " = " + result;
-        }
+    public float showResultOfDivide(int num1, int num2) {
+            return (float) num1 / (float) num2;
     }
 }
